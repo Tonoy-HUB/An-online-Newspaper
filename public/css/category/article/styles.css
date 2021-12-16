@@ -1,0 +1,42 @@
+
+h2 {
+	font-family: 'Roboto Condensed', sans-serif;
+}
+
+a {
+	text-decoration: none;
+	color: black;
+}
+
+a:hover {
+	color: red;
+}
+
+a.red {
+	color: #FF6F61;
+}
+
+.headline {
+	font-family: 'Roboto Condensed', sans-serif;
+	font-size: 2.5em;
+	margin: 0em;
+}
+
+.article-photo {
+	margin-top: 1.5em;
+	text-align: center;
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
+.main-body-article {
+	background-color: white;
+	box-shadow: -5px 5px 10px lightgray;
+	margin: 2em 12em;
+	padding: 2em;
+}
+
+.article-text {
+	margin: 2.5em;
+}
