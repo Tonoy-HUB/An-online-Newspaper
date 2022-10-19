@@ -38,10 +38,9 @@ Route::prefix('reporter')->group(function(){
     Route::delete('/news/{id}', [ReporterController::class, 'news_delete'])->name('reporters.news_delete');  
     Route::put('/news/{id}', [ReporterController::class, 'news_update'])->name('reporters.news_update');  
     Route::post('/news', [ReporterController::class, 'news_search'])->name('reporters.news_search');
- 
 });
 
-
+Route::prefix('types')->group(function(){
 Route::get('/category', [EventsController::class, 'type_index'])->name('types.index');
 Route::get('/category/create', [EventsController::class, 'type_create'])->name('types.create'); 
 Route::post('/store1', [EventsController::class, 'type_store'])->name('type_store');
@@ -49,18 +48,18 @@ Route::get('/types/{id}', [EventsController::class, 'type_show'])->name('types.s
 Route::get('/types/{id}/edit', [EventsController::class, 'type_edit'])->name('types.edit');
 Route::delete('/types/{id}', [EventsController::class, 'type_delete'])->name('category_delete');  
 Route::put('/types/{id}', [EventsController::class, 'type_update'])->name('types.update');
+});
 
-
-
+Route::prefix('reporter')->group(function(){
 Route::get('/reporters', [EventsController::class, 'reporter_index'])->name('reporter_index');
 Route::get('/reporter/create', [EventsController::class, 'reporter_create'])->name('reporter_create');
 Route::post('/reporter', [EventsController::class, 'reporter_store'])->name('reporter_store');
 Route::get('/reporter/{id}/edit', [EventsController::class, 'reporter_edit'])->name('reporter_edit');
 Route::put('/reporter/{id}', [EventsController::class, 'reporter_update'])->name('reporter_update');
 Route::delete('/reporter/{id}', [EventsController::class, 'reporter_delete'])->name('reporter_delete'); 
+});
 
-
-
+Route::prefix('user')->group(function(){
 Route::get('/users', [ReporterController::class, 'user_index'])->name('user_index');
 Route::get('/user/create', [ReporterController::class, 'user_create'])->name('user_create');
 Route::post('/user', [ReporterController::class, 'user_store'])->name('user_store');
@@ -68,9 +67,7 @@ Route::get('/user/{id}/edit', [ReporterController::class, 'user_edit'])->name('u
 Route::put('/user/{id}', [ReporterController::class, 'user_update'])->name('user_update');
 Route::delete('/user/{id}', [ReporterController::class, 'user_delete'])->name('user_delete'); 
 Route::get('/user/{id}', [ReporterController::class, 'user_show'])->name('user_show');
-
-
-
+});
 
 Route::get('/feedback', [UserController::class, 'feedback_index'])->name('feedback.index');
 Route::get('/feedback/{id}', [UserController::class, 'feedback_show'])->name('feedback.show');
